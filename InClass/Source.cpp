@@ -17,10 +17,11 @@
 
 int main()
 {
-	/*size_t std = sizeof(int);
+	size_t std = sizeof(int);
+	//std::cout << std;
 	int* ptr = new int[100];
 
-	delete[] ptr;*/
+	delete[] ptr;
 
 
 	// Work with class A
@@ -29,8 +30,10 @@ int main()
 	std::cout << *nCo;
 	delete ptr2;*/
 
+	int* stuff = new int();
+	std::cout << stuff << std::endl;
 
-
-
+	std::cout << *stuff << std::endl;
+	delete stuff;
 
 }
