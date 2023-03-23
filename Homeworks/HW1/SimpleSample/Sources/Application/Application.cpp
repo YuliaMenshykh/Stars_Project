@@ -1,8 +1,7 @@
+#include "pch.h"
 #include "Application.h"
 
-#include <Windows.h>
-#include <unordered_map>
-#include <string>
+
 #include "Common/Globals.h"
 #include "Common/Base_Funcs.h"
 

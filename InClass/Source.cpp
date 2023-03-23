@@ -15,13 +15,37 @@
 
 
 
+class Functor
+{
+public:
+	Functor(int& a) : a(a)
+	{
+
+	}
+	void operator()()
+	{
+		std::cout << a;
+	}
+
+	
+
+	int a;
+};
+
+
+
+void bar(int a)
+{
+	std::cout << a;
+}
+
 int main()
 {
-	size_t std = sizeof(int);
-	//std::cout << std;
-	int* ptr = new int[100];
+	//size_t std = sizeof(int);
+	////std::cout << std;
+	//int* ptr = new int[100];
 
-	delete[] ptr;
+	//delete[] ptr;
 
 
 	// Work with class A
@@ -30,10 +54,17 @@ int main()
 	std::cout << *nCo;
 	delete ptr2;*/
 
-	int* stuff = new int();
-	std::cout << stuff << std::endl;
+	//int* stuff = new int();
+	//std::cout << stuff << std::endl;
 
-	std::cout << *stuff << std::endl;
-	delete stuff;
+	//std::cout << *stuff << std::endl;
+	//delete stuff;
 
+	int a = 776;
+	auto lambda = [a]() {std::cout << a;};
+
+	Functor f(a);
+
+	//second
+	
 }
