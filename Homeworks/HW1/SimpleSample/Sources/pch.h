@@ -10,3 +10,4 @@
 #include <OpenGL/EGL/egl.h>
 #include <stdarg.h>
 #include <tchar.h>
+#include <ctime>

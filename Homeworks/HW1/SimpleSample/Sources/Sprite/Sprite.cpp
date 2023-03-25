@@ -1,9 +1,10 @@
 #include "pch.h"
 #include "Sprite.h"
 
+
 Sprite::Sprite()
 	: _Position( 0.0f, 0.0f )
-	, _ColorTint( 1.0f, 1.0f, 1.0f, 1.0f )
+	//, _ColorTint(0,0,0,0)
 	, _fRotation( 0.0f )
 	, _Scale( 1.0f, 1.0f )
 	, _TextureIndex( -1 )
@@ -11,6 +12,7 @@ Sprite::Sprite()
 {
 	this->_TM.SetIdentity();
 	this->_parentTM.SetIdentity();
+	
 }
 
 void Sprite::setParentTM( Matrix matTM )
@@ -62,15 +64,17 @@ int Sprite::getTexture()
 {
 	return this->_TextureIndex;
 }
-
-void Sprite::setTint( Vector4 color )
-{
-	this->_ColorTint = color;
-}
+//
+//void Sprite::setTint( Vector4 color )
+//{
+//	this->_ColorTint = color;
+//}
 
 Vector4 Sprite::getTint()
 {
-	return this->_ColorTint;
+	srand(time(NULL));
+	//, _ColorTint(0, 0, 0, 0)
+	return this->_ColorTint= Vector4(rand()%255, rand() % 255, rand() % 255, 255);
 }
 
 void Sprite::setDepth( float value )

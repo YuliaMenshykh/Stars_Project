@@ -19,7 +19,7 @@
 
 /// esCreateWindow flag - RGB color buffer
 #define ES_WINDOW_RGB           0
-/// esCreateWindow flag - ALPHA color buffer
+/// esCreateWindow flag - ALPHA buffer
 #define ES_WINDOW_ALPHA         1 
 /// esCreateWindow flag - depth buffer
 #define ES_WINDOW_DEPTH         2 

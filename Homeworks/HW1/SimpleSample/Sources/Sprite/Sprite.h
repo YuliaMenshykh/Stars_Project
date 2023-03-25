@@ -37,7 +37,7 @@ public:
 
 	// setter/ getter tint color
 	//
-	void setTint( Vector4 color );
+	//void setTint( Vector4 color );//
 	Vector4 getTint();
 
 	// setter/ getter depth
