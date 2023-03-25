@@ -1,9 +1,8 @@
+#include "pch.h"
+
 #include "Drawable.h"
 #include "Sprite/Sprite.h"
 #include "esUtils/esUtil.h"
-
-#include <string>
-#include <unordered_map>
 
 #include "Common/Vertex.h"
 #include "Common/Globals.h"
@@ -87,7 +86,7 @@ void Drawable::Init()
 
 	// shader
 	{
-		this->_uiVertexShader = esLoadShader( GL_VERTEX_SHADER, "../Resources/Shaders/Particle.vs" );
+		this->_uiVertexShader = esLoadShader( GL_VERTEX_SHADER,  "../Resources/Shaders/Particle.vs" );
 		this->_uiPixelShader = esLoadShader( GL_FRAGMENT_SHADER, "../Resources/Shaders/Particle.fs" );
 
 		this->_uiProgram = esLoadProgram( this->_uiVertexShader, this->_uiPixelShader );
@@ -144,7 +143,7 @@ void Drawable::Init()
 			"noise.tga",
 			"smoke.tga",
 			"star.tga"};
-		for( const std::string& sName : vecTex )
+		for( const std::string sName : vecTex )
 		{
 			std::string sFullPath = std::string( "../Resources/Textures/" ) + sName;
 			GLuint tex = createTex( sFullPath );
@@ -174,7 +173,7 @@ void Drawable::PreDraw()const
 	}
 }
 
-void Drawable::Draw( Sprite part )const
+void Drawable::Draw(Sprite part)const
 {
 	if( this->_uiColorUni != -1 )
 	{

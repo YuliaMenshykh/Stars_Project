@@ -1,8 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <OpenGL/GLES2/gl2.h>
-#include <OpenGL/EGL/egl.h>
-#include <stdarg.h>
+#include "pch.h"
+
 
 
 
@@ -95,7 +92,7 @@ GLuint esLoadShader ( GLenum type, char * filename )
 /// \param fragShaderSrc Fragment shader source code
 /// \return A new program object linked with the vertex/fragment shader pair, 0 on failure
 
-GLuint esLoadProgram ( GLuint vertexShader, GLuint fragmentShader )
+GLuint esLoadProgram (const GLuint vertexShader, const  GLuint fragmentShader )
 {
 	GLuint programObject;
 	GLint linked;
@@ -129,7 +126,7 @@ GLuint esLoadProgram ( GLuint vertexShader, GLuint fragmentShader )
 			glGetProgramInfoLog ( programObject, infoLen, NULL, infoLog );
 			esLogMessage ( "Error linking program:\n%s\n", infoLog );            
 
-			delete infoLog;
+			delete[] infoLog;
 		}
 
 		glDeleteProgram ( programObject );

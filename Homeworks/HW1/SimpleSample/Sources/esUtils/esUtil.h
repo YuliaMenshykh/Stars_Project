@@ -51,7 +51,7 @@ GLuint ESUTIL_API esLoadShader ( GLenum type, char * filename);
 /// \param fragShaderSrc Fragment shader source code
 /// \return A new program object linked with the vertex/fragment shader pair, 0 on failure
 //
-GLuint ESUTIL_API esLoadProgram ( GLuint vertexShader, GLuint fragmentShader );
+GLuint ESUTIL_API esLoadProgram (const GLuint vertexShader, const GLuint fragmentShader );
 
 
 

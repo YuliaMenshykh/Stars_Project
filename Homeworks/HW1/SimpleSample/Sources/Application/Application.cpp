@@ -37,6 +37,7 @@ Application::Application()
 	, eglSurface( nullptr )
 	, _uiSprites( 0 )
 {
+	
 	kpApp = this;
 }
 
@@ -65,7 +66,7 @@ void Application::MouseClick( bool isLeft )
 }
 
 
-void Application::Key( unsigned char key, bool bIsPressed )
+void Application::Key( const unsigned char key, const bool bIsPressed )
 {
 	if( !bIsPressed )
 		return;
@@ -121,8 +122,6 @@ void Application::Frame()
 		deltaTime = 1.0f / 60.0f;
 	}
 
-	this->Update( deltaTime );
-
 	if( this->eglContext )
 	{
 		eglMakeCurrent( this->eglDisplay, this->eglSurface, this->eglSurface, this->eglContext );
@@ -136,9 +135,6 @@ void Application::Frame()
 
 }
 
-void Application::Update( float deltaTime )
-{	
-}
 
 void Application::Draw()
 {
@@ -168,11 +164,7 @@ void Application::Draw()
 	this->_drawable.PostDraw();
 }
 
-void Application::clean()
-{
-}
-
-void Application::_MakeWindow( std::string sTitle, unsigned int uiWidth, unsigned int uiHeight )
+void Application::_MakeWindow( const std::string sTitle, const unsigned int uiWidth,const unsigned int uiHeight )
 {
 	WNDCLASS wndclass = { 0 };
 	DWORD    wStyle = 0;

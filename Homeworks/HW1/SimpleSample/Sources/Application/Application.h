@@ -37,17 +37,9 @@ public:
 	//
 	void Frame();
 
-	// update callback 
-	//
-	void Update( float deltaTime );
-
 	// draw callback from ogl
 	//
 	void Draw();
-
-	// clean up 
-	//
-	void clean();
 
 	// start of window's entry point here
 	//

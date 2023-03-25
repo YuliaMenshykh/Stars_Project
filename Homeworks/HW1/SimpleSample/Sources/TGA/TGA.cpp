@@ -1,5 +1,5 @@
+#include "pch.h"
 #include "TGA.h"
-#include <stdio.h>
 
 #pragma pack(push,x1)					// Byte alignment (8-bit)
 #pragma pack(1)

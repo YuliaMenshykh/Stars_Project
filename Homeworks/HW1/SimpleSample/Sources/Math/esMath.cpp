@@ -1,5 +1,6 @@
+#include "pch.h"
 #include "esMath.h"
-#include <math.h>
+
 
 //Vector2
 
@@ -17,12 +18,12 @@ Vector2 & Vector2::Normalize()
 	return *this;
 }
 
-Vector2 Vector2::operator + ( Vector2 vector)
+Vector2 Vector2::operator + (const Vector2 vector)
 {
 	return Vector2(x + vector.x, y + vector.y);
 }
 
-Vector2 & Vector2::operator += ( Vector2 vector)
+Vector2 & Vector2::operator += (const Vector2 vector)
 {
 	x += vector.x;
 	y += vector.y;
@@ -35,12 +36,12 @@ Vector2 Vector2::operator - ()
 	return Vector2(-x, -y);
 }
 
-Vector2 Vector2::operator - ( Vector2 vector)
+Vector2 Vector2::operator - (const Vector2 vector)
 {
 	return Vector2(x - vector.x, y - vector.y);
 }
 
-Vector2 & Vector2::operator -= ( Vector2 vector)
+Vector2 & Vector2::operator -= (const Vector2 vector)
 {
 	x -= vector.x;
 	y -= vector.y;
@@ -48,12 +49,12 @@ Vector2 & Vector2::operator -= ( Vector2 vector)
 	return *this;
 }
 
-Vector2 Vector2::operator * (GLfloat k)
+Vector2 Vector2::operator * (const GLfloat k)
 {
 	return Vector2(x * k, y * k);
 }
 
-Vector2 & Vector2::operator *= (GLfloat k)
+Vector2 & Vector2::operator *= (const GLfloat k)
 {
 	x *= k;
 	y *= k;
@@ -61,18 +62,18 @@ Vector2 & Vector2::operator *= (GLfloat k)
 	return *this;
 }
 
-Vector2 Vector2::operator / (GLfloat k)
+Vector2 Vector2::operator / (const GLfloat k)
 {
 	GLfloat kInv = 1.0f / k;
 	return Vector2(x * kInv, y * kInv);
 }
 
-Vector2 & Vector2::operator /= (GLfloat k)
+Vector2 & Vector2::operator /= (const GLfloat k)
 {
 	return operator *= (1.0f / k);
 }
 
-Vector2 & Vector2::operator = ( Vector2 vector)
+Vector2 & Vector2::operator = (const Vector2 vector)
 {
 	x = vector.x;
 	y = vector.y;
@@ -80,17 +81,17 @@ Vector2 & Vector2::operator = ( Vector2 vector)
 	return *this;
 }
 
-GLfloat Vector2::operator [] (unsigned int idx)
+GLfloat Vector2::operator [] (const unsigned int idx)
 {
 	return (&x)[idx];
 }
 
-Vector2 Vector2::Modulate( Vector2 vector)
+Vector2 Vector2::Modulate(const Vector2 vector)
 {
 	return Vector2(x * vector.x, y * vector.y);
 }
 
-GLfloat Vector2::Dot( Vector2 vector)
+GLfloat Vector2::Dot(const Vector2 vector)
 {
 	return x * vector.x + y * vector.y;
 }
@@ -112,12 +113,12 @@ Vector3 & Vector3::Normalize()
 	return *this;
 }
 
-Vector3 Vector3::operator + ( Vector3 vector)
+Vector3 Vector3::operator + (const Vector3 vector)
 {
 	return Vector3(x + vector.x, y + vector.y, z + vector.z);
 }
 
-Vector3 & Vector3::operator += ( Vector3 vector)
+Vector3 & Vector3::operator += (const Vector3 vector)
 {
 	x += vector.x;
 	y += vector.y;
@@ -131,7 +132,7 @@ Vector3 Vector3::operator - ()
 	return Vector3(-x, -y, -z);
 }
 
-Vector3 Vector3::operator - ( Vector3 vector)
+Vector3 Vector3::operator - (const Vector3 vector)
 {
 	return Vector3(x - vector.x, y - vector.y, z - vector.z);
 }
@@ -145,12 +146,12 @@ Vector3 & Vector3::operator -= ( Vector3 vector)
 	return *this;
 }
 
-Vector3 Vector3::operator * (GLfloat k)
+Vector3 Vector3::operator * (const GLfloat k)
 {
 	return Vector3(x * k, y * k, z * k);
 }
 
-Vector3 & Vector3::operator *= (GLfloat k)
+Vector3 & Vector3::operator *= (const GLfloat k)
 {
 	x *= k;
 	y *= k;
@@ -159,18 +160,18 @@ Vector3 & Vector3::operator *= (GLfloat k)
 	return *this;
 }
 
-Vector3 Vector3::operator / (GLfloat k)
+Vector3 Vector3::operator / (const GLfloat k)
 {
 	GLfloat kInv = 1.0f / k;
 	return Vector3(x * kInv, y * kInv, z * kInv);
 }
 	
-Vector3 & Vector3::operator /= (GLfloat k)
+Vector3 & Vector3::operator /= (const GLfloat k)
 {
 	return operator *= (1.0f / k);
 }
 
-Vector3 & Vector3::operator = ( Vector3 vector)
+Vector3 & Vector3::operator = (const Vector3 vector)
 {
 	x = vector.x;
 	y = vector.y;
@@ -179,22 +180,22 @@ Vector3 & Vector3::operator = ( Vector3 vector)
 	return *this;
 }
 
-GLfloat Vector3::operator [] (unsigned int idx)
+GLfloat Vector3::operator [] (const unsigned int idx)
 {
 	return (&x)[idx];
 }
 
-Vector3 Vector3::Modulate( Vector3 vector)
+Vector3 Vector3::Modulate(const Vector3 vector)
 {
 	return Vector3(x * vector.x, y * vector.y, z * vector.z);
 }
 
-GLfloat Vector3::Dot( Vector3 vector)
+GLfloat Vector3::Dot(const Vector3 vector)
 {
 	return x * vector.x + y * vector.y + z * vector.z;
 }
 
-Vector3 Vector3::Cross( Vector3 vector)
+Vector3 Vector3::Cross(const Vector3 vector)
 {
 	return Vector3(y * vector.z -  z * vector.y, z * vector.x - x * vector.z, x * vector.y - y * vector.x);
 }
