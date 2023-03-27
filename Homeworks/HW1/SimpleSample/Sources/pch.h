@@ -11,3 +11,6 @@
 #include <stdarg.h>
 #include <tchar.h>
 #include <ctime>
+#include <vector>
+#include <chrono>
+#include <thread>

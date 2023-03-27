@@ -37,7 +37,7 @@ public:
 
 	// setter/ getter tint color
 	//
-	//void setTint( Vector4 color );//
+	void setTint( Vector4 color );//
 	Vector4 getTint();
 
 	// setter/ getter depth
@@ -52,6 +52,11 @@ public:
 	// updating object transform
 	//
 	void MakeObjectTM( );
+
+	// setter/ getter life time
+	//
+	void setLifeTime(int LifeTime);
+	int getLifeTime();
 
 protected:
 	// base TM of create time

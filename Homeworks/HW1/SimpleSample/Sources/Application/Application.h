@@ -1,7 +1,5 @@
 #pragma once
 
-#include <string>
-
 #include "Drawable/Drawable.h"
 #include "Sprite/Sprite.h"
 
@@ -41,6 +39,10 @@ public:
 	//
 	void Draw();
 
+	// draw callback from ogl
+	//
+	void Clean();
+
 	// start of window's entry point here
 	//
 	void EntryPoint();
@@ -78,12 +80,15 @@ protected:
 	Drawable _drawable;
 
 	// sprite to draw
-	//
-	Sprite _sprite[5];
-	unsigned int _uiSprites;
+	
+	std::vector<Sprite> _sprite;
+	//unsigned int _uiSprites;
 
 	// for primitive timer
 	//
 	ULONGLONG _lastTime;
 	ULONGLONG _curTime;
+
+	// max RGB value
+	const float MaxColValue = 255.0;
 };

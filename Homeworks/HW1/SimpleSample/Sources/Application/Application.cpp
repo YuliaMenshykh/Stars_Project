@@ -35,7 +35,7 @@ Application::Application()
 	: eglContext( nullptr )
 	, eglDisplay( nullptr )
 	, eglSurface( nullptr )
-	, _uiSprites( 0 )
+	//, _uiSprites( 0 )
 {
 	
 	kpApp = this;
@@ -68,6 +68,8 @@ void Application::MouseClick( bool isLeft )
 
 void Application::Key( const unsigned char key, const bool bIsPressed )
 {
+	srand(time(NULL));
+
 	if( !bIsPressed )
 		return;
 
@@ -82,6 +84,11 @@ void Application::Key( const unsigned char key, const bool bIsPressed )
 		spr.setTexture( Globals::Texures[ "star.tga" ] );
 		spr.setDepth( kLayers[ELayer::kLayaerParticle] );
 		spr.setScale( { 50, 50 } );
+		float R = (rand() % 255) / MaxColValue;
+		float G = (rand() % 255) / MaxColValue;
+		float B = (rand() % 255) / MaxColValue;
+		spr.setTint(Vector4(R, G, B, MaxColValue));
+
 		Vector2 pos =
 		{
 			Base::RandF() * ( float )Globals::screenWidth,
@@ -90,7 +97,10 @@ void Application::Key( const unsigned char key, const bool bIsPressed )
 		spr.setPosition( pos );
 		spr.MakeObjectTM();
 
-		this->_sprite[ this->_uiSprites++ ] = spr;
+
+		//this->_sprite[this->_uiSprites++] = spr;
+		this->_sprite.push_back(spr);
+
 	}
 
 }
@@ -155,14 +165,21 @@ void Application::Draw()
 
 
 	// order of drawing object with depth test -> doens't matter
-	for( unsigned int i = 0; i < this->_uiSprites; ++i )
+	/*for( unsigned int i = 0; i < this->_uiSprites; ++i )
 	{
 		this->_drawable.Draw( this->_sprite[i] );
+	}*/
+	
+	for (size_t i = 0; i < _sprite.size(); i++)
+	{
+		this->_drawable.Draw(this->_sprite[i]);
 	}
 	
 	// clean up binding
 	this->_drawable.PostDraw();
+	//this->_drawable.Clean();
 }
+
 
 void Application::_MakeWindow( const std::string sTitle, const unsigned int uiWidth,const unsigned int uiHeight )
 {

@@ -2,9 +2,10 @@
 #include "Sprite.h"
 
 
+
 Sprite::Sprite()
 	: _Position( 0.0f, 0.0f )
-	//, _ColorTint(0,0,0,0)
+	, _ColorTint(0.0f, 0.0f, 0.0f, 0.0f)
 	, _fRotation( 0.0f )
 	, _Scale( 1.0f, 1.0f )
 	, _TextureIndex( -1 )
@@ -64,17 +65,15 @@ int Sprite::getTexture()
 {
 	return this->_TextureIndex;
 }
-//
-//void Sprite::setTint( Vector4 color )
-//{
-//	this->_ColorTint = color;
-//}
+
+void Sprite::setTint( Vector4 color )
+{
+	this->_ColorTint = color;
+}
 
 Vector4 Sprite::getTint()
 {
-	srand(time(NULL));
-	//, _ColorTint(0, 0, 0, 0)
-	return this->_ColorTint= Vector4(rand()%255, rand() % 255, rand() % 255, 255);
+	return this->_ColorTint;
 }
 
 void Sprite::setDepth( float value )
@@ -108,6 +107,16 @@ void Sprite::MakeObjectTM()
 	pos.SetTranslation( this->_Position.x, this->_Position.y, this->_fDepth );
 
 	this->_TM = ( scale * rot * pos ) * this->_parentTM;
+}
+
+void Sprite::setLifeTime(int LifeTime)
+{
+	std::this_thread::sleep_for(std::chrono::seconds(LifeTime));
+}
+
+int Sprite::getLifeTime()
+{
+	return 0.0f;
 }
 
 

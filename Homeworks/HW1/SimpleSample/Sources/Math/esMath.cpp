@@ -2,6 +2,7 @@
 #include "esMath.h"
 
 
+
 //Vector2
 
 GLfloat Vector2::Length()

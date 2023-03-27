@@ -197,7 +197,8 @@ void Drawable::Draw(Sprite part)const
 	glUniform1i( this->_uiTextureSampler, 0 );
 
 	// draw particle
-	glDrawArrays( GL_TRIANGLES, 0, 6 );
+	glDrawArrays(GL_TRIANGLES, 0, 6);
+
 }
 
 void Drawable::PostDraw()const
@@ -217,8 +218,10 @@ void Drawable::Clean()
 	for( decltype( Globals::Texures )::const_iterator itStart = Globals::Texures.begin(), itEnd = Globals::Texures.end();
 		itStart != itEnd; ++itStart )
 	{
+		std::this_thread::sleep_for(std::chrono::seconds(3));
 		glDeleteBuffers( 1, &itStart->second );
 	}
+
 }
 
 Matrix Drawable::getView()

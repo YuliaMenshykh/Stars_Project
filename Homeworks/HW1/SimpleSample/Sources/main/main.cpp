@@ -11,7 +11,6 @@ int _tmain(int argc, _TCHAR* argv[])
 	app.Init();
 	app.EntryPoint();
 
-
 	return 0;
 }
 
