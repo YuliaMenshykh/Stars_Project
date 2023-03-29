@@ -15,22 +15,22 @@
 
 
 
-class Functor
-{
-public:
-	Functor(int& a) : a(a)
-	{
-
-	}
-	void operator()()
-	{
-		std::cout << a;
-	}
-
-	
-
-	int a;
-};
+//class Functor
+//{
+//public:
+//	Functor(int& a) : a(a)
+//	{
+//
+//	}
+//	void operator()()
+//	{
+//		std::cout << a;
+//	}
+//
+//	
+//
+//	int a;
+//};
 
 
 
@@ -39,8 +39,53 @@ void bar(int a)
 	std::cout << a;
 }
 
+
+struct Bit
+{
+	union
+	{
+		int a;
+
+		struct 
+		{
+			int bit1 : 1;
+			int bit2 : 1;
+
+		};
+	};
+};
+
+
+enum class Format : int
+{
+	Position = 1 << 0,
+	Normal = 1<<1,
+	Tangent = 1<<2,
+	Texture = 1<<3
+
+};
+Format operator|=(Format a, Format b)
+{
+	return(Format)((int)a | (int)b);
+}
 int main()
 {
+	Format f = Format::Position;
+	f |= Format::Tangent;
+
+
+
+	Bit b;
+	b.a = 0;
+
+	b.bit1 = 1;
+
+	b.bit2 = 1;
+	if (b.bit1 == 1)
+	{
+		int dd = 23;
+	}
+
 	//size_t std = sizeof(int);
 	////std::cout << std;
 	//int* ptr = new int[100];
@@ -60,11 +105,12 @@ int main()
 	//std::cout << *stuff << std::endl;
 	//delete stuff;
 
-	int a = 776;
-	auto lambda = [a]() {std::cout << a;};
-
-	Functor f(a);
+	
 
 	//second
+	//int a = 776;
+	//auto lambda = [a]() {std::cout << a;};
+
+	//Functor f(a);
 	
 }
