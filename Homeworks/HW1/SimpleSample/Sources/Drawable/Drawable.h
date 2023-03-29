@@ -1,8 +1,5 @@
 #pragma once
 
-#include "esUtils/esUtil.h"
-#include "Math/esMath.h"
-
 class Sprite;
 
 
@@ -26,7 +23,10 @@ public:
 	//
 	void Clean();
 
-	// getter of view matrix
+	// getter of view 
+	// 
+	// 
+	// 
 	//
 	Matrix getView();
 

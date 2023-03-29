@@ -3,8 +3,6 @@
 #include "Drawable/Drawable.h"
 #include "Sprite/Sprite.h"
 
-#include "esUtils/esUtil.h"
-
 class Application final
 {
 public:

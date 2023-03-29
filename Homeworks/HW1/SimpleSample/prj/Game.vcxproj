@@ -56,7 +56,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>../Sources;$(SolutionDir)\Libs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Sources;$(SolutionDir)\Libs;Y:\Gameloft_\Homeworks\HW1\SimpleSample\Libs\MathLib;Y:\Gameloft_\Homeworks\HW1\SimpleSample\Libs\UtilitiesLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -86,10 +86,11 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>../Sources;$(SolutionDir)\Libs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Sources;$(SolutionDir)\Libs;Y:\Gameloft_\Homeworks\HW1\SimpleSample\Libs\MathLib;Y:\Gameloft_\Homeworks\HW1\SimpleSample\Libs\UtilitiesLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -106,25 +107,20 @@
     <ClInclude Include="..\Sources\Common\Globals.h" />
     <ClInclude Include="..\Sources\Common\Vertex.h" />
     <ClInclude Include="..\Sources\Drawable\Drawable.h" />
-    <ClInclude Include="..\Sources\esUtils\esUtil.h" />
-    <ClInclude Include="..\Sources\Math\esMath.h" />
     <ClInclude Include="..\Sources\pch.h" />
     <ClInclude Include="..\Sources\Sprite\Sprite.h" />
-    <ClInclude Include="..\Sources\TGA\TGA.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\Application\Application.cpp" />
     <ClCompile Include="..\Sources\Common\Globals.cpp" />
     <ClCompile Include="..\Sources\Drawable\Drawable.cpp" />
-    <ClCompile Include="..\Sources\esUtils\esUtil.cpp" />
     <ClCompile Include="..\Sources\main\main.cpp" />
-    <ClCompile Include="..\Sources\Math\esMath.cpp" />
     <ClCompile Include="..\Sources\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\Sources\Sprite\Sprite.cpp" />
-    <ClCompile Include="..\Sources\TGA\TGA.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Bin\Resources\Shaders\Particle.fs" />
@@ -135,6 +131,14 @@
     <Image Include="..\Bin\Resources\Textures\noise.tga" />
     <Image Include="..\Bin\Resources\Textures\smoke.tga" />
     <Image Include="..\Bin\Resources\Textures\star.tga" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libs\MathLib\MathLib.vcxproj">
+      <Project>{a22a8640-63ff-417d-a12c-8221683ccf03}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Libs\UtilitiesLib\UtilitiesLib.vcxproj">
+      <Project>{81bd6e20-eeac-42fd-ac2f-f05fb6437168}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
