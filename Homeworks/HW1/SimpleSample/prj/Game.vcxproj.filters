@@ -16,15 +16,6 @@
     <ClCompile Include="..\Sources\Application\Application.cpp">
       <Filter>Application</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sources\esUtils\esUtil.cpp">
-      <Filter>esUtils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\TGA\TGA.cpp">
-      <Filter>TGA</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Sources\Math\esMath.cpp">
-      <Filter>Math</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sources\pch.cpp">
       <Filter>main</Filter>
     </ClCompile>
@@ -47,15 +38,6 @@
     </ClInclude>
     <ClInclude Include="..\Sources\Application\Application.h">
       <Filter>Application</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Sources\esUtils\esUtil.h">
-      <Filter>esUtils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Sources\TGA\TGA.h">
-      <Filter>TGA</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Sources\Math\esMath.h">
-      <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="..\Sources\pch.h">
       <Filter>main</Filter>
@@ -85,15 +67,6 @@
     </Filter>
     <Filter Include="Application">
       <UniqueIdentifier>{7fd136d2-e56d-498a-ad1e-15cd91fe9c6e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Math">
-      <UniqueIdentifier>{3f8c8fc8-62f5-47b4-9b54-6a0d7890a42f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="esUtils">
-      <UniqueIdentifier>{6f5a81dd-75d5-4dfb-b9e6-207912d94e32}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="TGA">
-      <UniqueIdentifier>{131f1032-144a-496c-a320-db65e3600b51}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

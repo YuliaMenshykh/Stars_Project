@@ -14,3 +14,7 @@
 #include <vector>
 #include <chrono>
 #include <thread>
+#include "MathLib/HeaderMath.h"
+#pragma comment( lib, "MathLib.lib" )
+#include "UtilitiesLib/HeaderUtils.h"
+#pragma comment( lib, "UtilitiesLib.lib" )

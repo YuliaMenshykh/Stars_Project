@@ -2,11 +2,9 @@
 
 #include "Drawable.h"
 #include "Sprite/Sprite.h"
-#include "esUtils/esUtil.h"
 
 #include "Common/Vertex.h"
 #include "Common/Globals.h"
-#include "TGA/TGA.h"
 
 Drawable::Drawable()
 	: _uiVBO( 0 )
@@ -86,8 +84,8 @@ void Drawable::Init()
 
 	// shader
 	{
-		this->_uiVertexShader = esLoadShader( GL_VERTEX_SHADER,  "../Resources/Shaders/Particle.vs" );
-		this->_uiPixelShader = esLoadShader( GL_FRAGMENT_SHADER, "../Resources/Shaders/Particle.fs" );
+		this->_uiVertexShader = esLoadShader( GL_VERTEX_SHADER, "../Resources/Shaders/Particle.vs" );
+		this->_uiPixelShader = esLoadShader(GL_FRAGMENT_SHADER, "../Resources/Shaders/Particle.fs" );
 
 		this->_uiProgram = esLoadProgram( this->_uiVertexShader, this->_uiPixelShader );
 
@@ -182,10 +180,7 @@ void Drawable::Draw(Sprite part)const
 	}
 
 	if( this->_uiTM != -1 )
-	{
-		//Matrix viewProj = this->matView * this->projOrtho;
-
-		Matrix viewProj = this->projOrtho;
+	{Matrix viewProj = this->projOrtho;
 
 		Matrix res = part.getObjectTM();
 		res = res * viewProj;

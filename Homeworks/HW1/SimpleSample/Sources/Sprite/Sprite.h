@@ -1,7 +1,5 @@
 #pragma once
 
-#include "Math/esMath.h"
-
 class Sprite
 {
 public:
