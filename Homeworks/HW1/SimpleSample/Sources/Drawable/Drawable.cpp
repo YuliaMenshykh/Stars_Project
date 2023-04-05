@@ -193,28 +193,35 @@ void Drawable::Draw(Sprite part)const
 
 	// draw particle
 	glDrawArrays(GL_TRIANGLES, 0, 6);
-
 }
 
 void Drawable::PostDraw()const
 {
 	glBindTexture( GL_TEXTURE_2D, 0 );
 	glBindBuffer( GL_ARRAY_BUFFER, 0 );
+
+	std::cout << "in PostDraw" << std::endl;
+	
 }
 
 void Drawable::Clean()
 {
-	glDeleteBuffers( 1, &this->_uiVBO );
-	glDeleteProgram( this->_uiProgram );
-	glDeleteShader( this->_uiVertexShader );
-	glDeleteShader( this->_uiPixelShader );
+	std::cout << "in drawable clean" << std::endl;
+	
+	//glDeleteBuffers( 1, &this->_uiVBO );
+	//glDeleteProgram( this->_uiProgram );
+	//glDeleteShader( this->_uiVertexShader );
+	//glDeleteShader( this->_uiPixelShader );
 
 	// texts
 	for( decltype( Globals::Texures )::const_iterator itStart = Globals::Texures.begin(), itEnd = Globals::Texures.end();
 		itStart != itEnd; ++itStart )
 	{
-		std::this_thread::sleep_for(std::chrono::seconds(3));
-		glDeleteBuffers( 1, &itStart->second );
+		
+		//Sleep(5000);
+		//std::this_thread::sleep_for(std::chrono::seconds(3));
+		glDeleteBuffers( 1, &itStart->second);
+		
 	}
 
 }

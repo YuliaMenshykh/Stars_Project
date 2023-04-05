@@ -7,9 +7,6 @@
     <ClCompile Include="..\Sources\Common\Globals.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sources\Sprite\Sprite.cpp">
-      <Filter>Sprite</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sources\Drawable\Drawable.cpp">
       <Filter>Drawable</Filter>
     </ClCompile>
@@ -18,6 +15,12 @@
     </ClCompile>
     <ClCompile Include="..\Sources\pch.cpp">
       <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Sprite\Sprite.cpp">
+      <Filter>Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\ecs\ecsComponent.cpp">
+      <Filter>ECS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -30,9 +33,6 @@
     <ClInclude Include="..\Sources\Common\Vertex.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Sources\Sprite\Sprite.h">
-      <Filter>Sprite</Filter>
-    </ClInclude>
     <ClInclude Include="..\Sources\Drawable\Drawable.h">
       <Filter>Drawable</Filter>
     </ClInclude>
@@ -41,6 +41,12 @@
     </ClInclude>
     <ClInclude Include="..\Sources\pch.h">
       <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Sprite\Sprite.h">
+      <Filter>Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\ecs\ecsComponent.h">
+      <Filter>ECS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +73,9 @@
     </Filter>
     <Filter Include="Application">
       <UniqueIdentifier>{7fd136d2-e56d-498a-ad1e-15cd91fe9c6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ECS">
+      <UniqueIdentifier>{37f0192a-af39-4dd1-8c31-e80ca81eac0e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

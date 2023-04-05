@@ -2,6 +2,7 @@
 #include "Application.h"
 
 
+
 #include "Common/Globals.h"
 #include "Common/Base_Funcs.h"
 
@@ -54,6 +55,7 @@ void Application::Init()
 
 	// initing drawable for all sprites
 	this->_drawable.Init();
+	std::cout << "in Init" << std::endl;
 }
 
 void Application::Mouse( float x, float y )
@@ -73,10 +75,6 @@ void Application::Key( const unsigned char key, const bool bIsPressed )
 	if( !bIsPressed )
 		return;
 
-	// move cam by X axis
-	//if( key == 'N' )
-	//{
-	//}
 	if( key == VK_SPACE )
 	{
 		Sprite spr;
@@ -88,7 +86,6 @@ void Application::Key( const unsigned char key, const bool bIsPressed )
 		float G = (rand() % 255) / MaxColValue;
 		float B = (rand() % 255) / MaxColValue;
 		spr.setTint(Vector4(R, G, B, MaxColValue));
-
 		Vector2 pos =
 		{
 			Base::RandF() * ( float )Globals::screenWidth,
@@ -96,11 +93,9 @@ void Application::Key( const unsigned char key, const bool bIsPressed )
 		};
 		spr.setPosition( pos );
 		spr.MakeObjectTM();
-
-
-		//this->_sprite[this->_uiSprites++] = spr;
 		this->_sprite.push_back(spr);
-
+		
+		this->Clean(spr);
 	}
 
 }
@@ -148,6 +143,7 @@ void Application::Frame()
 
 void Application::Draw()
 {
+	std::cout << "in draw" << std::endl;
 	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
 	// allow alpha blending
@@ -162,14 +158,6 @@ void Application::Draw()
 
 	// open GL does NOT allow to draw in threads, so all this task should be in main thread
 	// poor OpenGL.....
-
-
-	// order of drawing object with depth test -> doens't matter
-	/*for( unsigned int i = 0; i < this->_uiSprites; ++i )
-	{
-		this->_drawable.Draw( this->_sprite[i] );
-	}*/
-	
 	for (size_t i = 0; i < _sprite.size(); i++)
 	{
 		this->_drawable.Draw(this->_sprite[i]);
@@ -177,7 +165,29 @@ void Application::Draw()
 	
 	// clean up binding
 	this->_drawable.PostDraw();
-	//this->_drawable.Clean();
+	
+}
+
+void Application::Clean(Sprite &spr)
+{
+	
+	std::cout << "in clean" << std::endl;
+	spr.setScale({ 10, 10 });
+	//spr.MakeObjectTM();
+	
+	//if (_sprite.size() > 1)
+	//{
+	//	for (auto i = _sprite.begin(); i < _sprite.end(); i++)
+	//	{
+	//		std::cout << "in clean" << std::endl;
+	//		//Sleep(5000);
+	//		//std::this_thread::sleep_for(std::chrono::seconds(7));
+	//		//this->_sprite.erase(i);
+	//	}
+	//	//this->_drawable.Clean();
+	//}
+	//
+	////this->_drawable.Clean();
 }
 
 

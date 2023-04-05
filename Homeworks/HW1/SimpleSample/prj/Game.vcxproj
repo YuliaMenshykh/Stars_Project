@@ -107,6 +107,7 @@
     <ClInclude Include="..\Sources\Common\Globals.h" />
     <ClInclude Include="..\Sources\Common\Vertex.h" />
     <ClInclude Include="..\Sources\Drawable\Drawable.h" />
+    <ClInclude Include="..\Sources\ecs\ecsComponent.h" />
     <ClInclude Include="..\Sources\pch.h" />
     <ClInclude Include="..\Sources\Sprite\Sprite.h" />
   </ItemGroup>
@@ -114,6 +115,7 @@
     <ClCompile Include="..\Sources\Application\Application.cpp" />
     <ClCompile Include="..\Sources\Common\Globals.cpp" />
     <ClCompile Include="..\Sources\Drawable\Drawable.cpp" />
+    <ClCompile Include="..\Sources\ecs\ecsComponent.cpp" />
     <ClCompile Include="..\Sources\main\main.cpp" />
     <ClCompile Include="..\Sources\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

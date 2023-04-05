@@ -14,6 +14,8 @@
 #include <vector>
 #include <chrono>
 #include <thread>
+#include <iostream>
+#include <cassert>
 #include "MathLib/HeaderMath.h"
 #pragma comment( lib, "MathLib.lib" )
 #include "UtilitiesLib/HeaderUtils.h"

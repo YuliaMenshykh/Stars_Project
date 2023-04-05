@@ -39,7 +39,7 @@ public:
 
 	// draw callback from ogl
 	//
-	void Clean();
+	void Clean(Sprite& spr);
 
 	// start of window's entry point here
 	//

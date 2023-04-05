@@ -71,7 +71,7 @@ Format operator|=(Format a, Format b)
 int main()
 {
 	Format f = Format::Position;
-	f |= Format::Tangent;
+ 	f |= Format::Tangent;
 
 
 

@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "Sprite.h"
-
+#include "..\ecs\ecsComponent.h"
 
 
 Sprite::Sprite()
@@ -13,7 +13,6 @@ Sprite::Sprite()
 {
 	this->_TM.SetIdentity();
 	this->_parentTM.SetIdentity();
-	
 }
 
 void Sprite::setParentTM( Matrix matTM )
@@ -116,7 +115,7 @@ void Sprite::setLifeTime(int LifeTime)
 
 int Sprite::getLifeTime()
 {
-	return 0.0f;
+	return 0;
 }
 
 
