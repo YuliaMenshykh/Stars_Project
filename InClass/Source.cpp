@@ -33,7 +33,7 @@
 //};
 
 
-
+//class 3
 void bar(int a)
 {
 	std::cout << a;
@@ -68,23 +68,55 @@ Format operator|=(Format a, Format b)
 {
 	return(Format)((int)a | (int)b);
 }
+//class3
+
+
+struct data
+{
+	data()
+		:n(new int [4*1025*1025])
+	{
+
+	}
+	~data()
+	{
+		delete n;
+	}
+	int *n;
+};
+
+
+
 int main()
 {
-	Format f = Format::Position;
- 	f |= Format::Tangent;
+	//class 4
+	std::weak_ptr<data> weak;
+
+	std::shared_ptr<data> sh;
+	//make_shared and rreset
+	sh.reset(new data());
+	sh->n[2] = 23;
+	//data d;
 
 
 
-	Bit b;
-	b.a = 0;
+	//class 3
+	//Format f = Format::Position;
+	//f |= Format::Tangent;
 
-	b.bit1 = 1;
 
-	b.bit2 = 1;
-	if (b.bit1 == 1)
-	{
-		int dd = 23;
-	}
+
+	//Bit b;
+	//b.a = 0;
+
+	//b.bit1 = 1;
+
+	//b.bit2 = 1;
+	//if (b.bit1 == 1)
+	//{
+	//	int dd = 23;
+	//}
+	//class 3
 
 	//size_t std = sizeof(int);
 	////std::cout << std;
