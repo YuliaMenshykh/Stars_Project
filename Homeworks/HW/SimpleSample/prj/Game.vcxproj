@@ -109,6 +109,7 @@
     <ClInclude Include="..\Sources\Drawable\Drawable.h" />
     <ClInclude Include="..\Sources\ecs\ecsComponent.h" />
     <ClInclude Include="..\Sources\Node\Node.h" />
+    <ClInclude Include="..\Sources\Particle\ParticleSyastem.h" />
     <ClInclude Include="..\Sources\pch.h" />
     <ClInclude Include="..\Sources\Sprite\Sprite.h" />
   </ItemGroup>
@@ -119,6 +120,7 @@
     <ClCompile Include="..\Sources\ecs\ecsComponent.cpp" />
     <ClCompile Include="..\Sources\main\main.cpp" />
     <ClCompile Include="..\Sources\Node\Node.cpp" />
+    <ClCompile Include="..\Sources\Particle\ParticleSyastem.cpp" />
     <ClCompile Include="..\Sources\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">pch.h</PrecompiledHeaderFile>

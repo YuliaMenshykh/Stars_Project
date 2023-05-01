@@ -1,2 +1,2 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(499,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  MathLib.vcxproj -> Y:\Gameloft_\Homeworks\HW\SimpleSample\Bin\Debug-Win32\MathLib.lib
+  MathLib.vcxproj -> C:\Users\Tetyana\Desktop\Stars_Project\Homeworks\HW\SimpleSample\Bin\Debug-Win32\MathLib.lib

@@ -25,6 +25,9 @@
     <ClCompile Include="..\Sources\Node\Node.cpp">
       <Filter>Node</Filter>
     </ClCompile>
+    <ClCompile Include="..\Sources\Particle\ParticleSyastem.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Common\Base_Funcs.h">
@@ -53,6 +56,9 @@
     </ClInclude>
     <ClInclude Include="..\Sources\Node\Node.h">
       <Filter>Node</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\Particle\ParticleSyastem.h">
+      <Filter>Particle</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +91,9 @@
     </Filter>
     <Filter Include="Node">
       <UniqueIdentifier>{24a57acb-3141-4db0-8f88-d66b81146864}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Particle">
+      <UniqueIdentifier>{5d1be8b9-9032-4517-9a42-78ad7af972dd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
