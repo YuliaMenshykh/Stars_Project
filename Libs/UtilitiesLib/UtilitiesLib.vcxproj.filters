@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{d11d6daf-f67f-4eb9-89b6-fc2c3b8c570a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TGA">
+      <UniqueIdentifier>{47d7fb6d-72ff-4bc0-8006-faff33a17267}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{800dcffd-2fff-4ea2-9644-48a7db569681}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Shader\Shader.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="TGA\TGA.cpp">
+      <Filter>TGA</Filter>
+    </ClCompile>
+    <ClCompile Include="Upch.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Shader\Shader.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="TGA\TGA.h">
+      <Filter>TGA</Filter>
+    </ClInclude>
+    <ClInclude Include="Upch.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderUtils.h" />
+  </ItemGroup>
+</Project>
